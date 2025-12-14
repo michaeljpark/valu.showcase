@@ -129,6 +129,11 @@ footer p {
         display: none;
     }
 
+    .showcase-row:last-of-type .showcase-item:last-child .sub-heading,
+    .showcase-row:last-of-type .showcase-item:last-child .body {
+        display: block;
+    }
+
     .showcase-item {
         gap: 20px;
     }

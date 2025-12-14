@@ -39,6 +39,12 @@ header h1 {
     padding: 0 40px 80px;
 }
 
+.showcase-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
 .showcase-item {
     display: flex;
     flex-direction: column;

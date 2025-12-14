@@ -68,7 +68,7 @@ header h1 {
 }
 
 .image-container:hover .showcase-image {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .sub-heading {
@@ -162,6 +162,11 @@ footer p {
 
     footer {
         padding: 40px 20px;
+    }
+
+    .image-container:hover .showcase-image,
+    .image-container:active .showcase-image {
+        transform: scale(1.5);
     }
 }
 

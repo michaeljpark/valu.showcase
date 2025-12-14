@@ -120,6 +120,15 @@ footer p {
         padding: 0 20px 60px;
     }
 
+    .showcase-row {
+        grid-template-columns: 1fr;
+    }
+
+    .showcase-row .sub-heading,
+    .showcase-row .body {
+        display: none;
+    }
+
     .showcase-item {
         gap: 20px;
     }

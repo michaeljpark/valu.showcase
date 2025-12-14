@@ -56,6 +56,7 @@ header h1 {
     aspect-ratio: 16 / 9;
     background: #ffffff;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .showcase-image {
@@ -63,6 +64,11 @@ header h1 {
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.4s ease-out;
+}
+
+.image-container:hover .showcase-image {
+    transform: scale(1.05);
 }
 
 .sub-heading {

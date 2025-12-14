@@ -82,7 +82,19 @@ header h1 {
 .iframe-container iframe {
     width: 100%;
     height: 1000px;
-    border: none;
+    border: 1px solid #e0e0e0;
+    border-radius: 60px;
+    overflow: hidden;
+}
+
+/* Hide scrollbar but allow scrolling in iframe */
+.iframe-container iframe::-webkit-scrollbar {
+    display: none;
+}
+
+.iframe-container iframe {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 /* Footer */

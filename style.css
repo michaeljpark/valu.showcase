@@ -163,3 +163,64 @@ footer p {
 html {
     scroll-behavior: smooth;
 }
+
+/* Fade-in from bottom animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.showcase-item,
+.showcase-row {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.showcase-item:nth-child(1) { animation-delay: 0.1s; }
+.showcase-item:nth-child(2) { animation-delay: 0.2s; }
+.showcase-item:nth-child(3) { animation-delay: 0.3s; }
+.showcase-item:nth-child(4) { animation-delay: 0.4s; }
+.showcase-item:nth-child(5) { animation-delay: 0.5s; }
+.showcase-row:nth-child(6) { animation-delay: 0.6s; }
+.showcase-row:nth-child(7) { animation-delay: 0.7s; }
+.showcase-row:nth-child(8) { animation-delay: 0.8s; }
+.showcase-item:nth-child(9) { animation-delay: 0.9s; }
+
+.image-container {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.showcase-item:nth-child(1) .image-container { animation-delay: 0.15s; }
+.showcase-item:nth-child(2) .image-container { animation-delay: 0.25s; }
+.showcase-item:nth-child(3) .image-container { animation-delay: 0.35s; }
+.showcase-item:nth-child(4) .image-container { animation-delay: 0.45s; }
+.showcase-item:nth-child(5) .image-container { animation-delay: 0.55s; }
+
+.sub-heading,
+.body {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.showcase-item:nth-child(1) .sub-heading { animation-delay: 0.25s; }
+.showcase-item:nth-child(1) .body { animation-delay: 0.35s; }
+.showcase-item:nth-child(2) .sub-heading { animation-delay: 0.35s; }
+.showcase-item:nth-child(2) .body { animation-delay: 0.45s; }
+.showcase-item:nth-child(3) .sub-heading { animation-delay: 0.45s; }
+.showcase-item:nth-child(3) .body { animation-delay: 0.55s; }
+.showcase-item:nth-child(4) .sub-heading { animation-delay: 0.55s; }
+.showcase-item:nth-child(4) .body { animation-delay: 0.65s; }
+.showcase-item:nth-child(5) .sub-heading { animation-delay: 0.65s; }
+.showcase-item:nth-child(5) .body { animation-delay: 0.75s; }
+
+.iframe-container {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 1s forwards;
+}

@@ -1,23 +1,24 @@
 // Design Showcase Interactive Features
 document.addEventListener('DOMContentLoaded', function() {
-    // Intersection Observer for scroll animations
+    // Intersection Observer for scroll-triggered animations
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
+        rootMargin: '0px 0px -100px 0px',
         threshold: 0.1
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                entry.target.style.animationPlayState = 'running';
             }
         });
     }, observerOptions);
 
-    // Observe all showcase items
-    const showcaseItems = document.querySelectorAll('.showcase-item');
+    // Observe all showcase items and rows
+    const showcaseItems = document.querySelectorAll('.showcase-item, .showcase-row');
     showcaseItems.forEach(item => {
+        item.style.animationPlayState = 'paused';
         observer.observe(item);
     });
 

@@ -164,9 +164,20 @@ footer p {
         padding: 40px 20px;
     }
 
-    .image-container:hover .showcase-image,
-    .image-container:active .showcase-image {
-        transform: scale(1.5);
+    .image-container.zoomed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1000;
+        background: #000;
+        cursor: zoom-out;
+    }
+
+    .image-container.zoomed .showcase-image {
+        transform: scale(1);
+        object-fit: contain;
     }
 }
 

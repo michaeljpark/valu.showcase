@@ -102,4 +102,15 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Embedded content loaded successfully');
         });
     }
+
+    // Mobile image zoom toggle
+    if (window.innerWidth <= 768) {
+        const imageContainers = document.querySelectorAll('.image-container');
+        imageContainers.forEach(container => {
+            container.addEventListener('click', function(e) {
+                e.preventDefault();
+                this.classList.toggle('zoomed');
+            });
+        });
+    }
 });

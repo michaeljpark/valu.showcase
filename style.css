@@ -19,8 +19,8 @@ body {
 
 /* Header */
 header {
-    padding: 80px 40px;
-    text-align: center;
+    padding: 80px 80px 60px;
+    text-align: left;
 }
 
 header h1 {
@@ -29,6 +29,29 @@ header h1 {
     color: #000;
     letter-spacing: -5px;
     text-transform: lowercase;
+    margin-bottom: 40px;
+}
+
+.header-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.info-left {
+    text-align: left;
+}
+
+.info-right {
+    text-align: right;
+}
+
+.header-info p {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: #666;
+    line-height: 1.8;
+    margin: 0;
 }
 
 /* Showcase Layout */
@@ -36,7 +59,7 @@ header h1 {
     display: flex;
     flex-direction: column;
     gap: 80px;
-    padding: 0 40px 80px;
+    padding: 0 80px 80px;
 }
 
 .showcase-row {
@@ -88,7 +111,7 @@ header h1 {
 
 /* Iframe Section */
 .iframe-container {
-    padding: 0 40px 80px;
+    padding: 0 80px 80px;
 }
 
 .iframe-container iframe {
@@ -100,7 +123,7 @@ header h1 {
 
 /* Footer */
 footer {
-    padding: 60px 40px;
+    padding: 60px 80px;
     text-align: center;
 }
 
@@ -119,6 +142,19 @@ footer p {
     header h1 {
         font-size: 2.5rem;
         letter-spacing: -3px;
+    }
+
+    .header-info {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .info-right {
+        text-align: left;
+    }
+
+    .header-info p {
+        font-size: 1rem;
     }
 
     .showcase {

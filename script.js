@@ -102,4 +102,43 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Embedded content loaded successfully');
         });
     }
+
+    // Scroll-based slideshow for images 6-12
+    const scrollSlideshow = document.querySelector('.scroll-slideshow');
+    const slides = document.querySelectorAll('.scroll-slide');
+
+    if (scrollSlideshow && slides.length > 0) {
+        let ticking = false;
+
+        function updateSlide() {
+            const rect = scrollSlideshow.getBoundingClientRect();
+            const scrollProgress = -rect.top / (rect.height - window.innerHeight);
+            const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
+
+            // Calculate which slide should be active (0-6 for 7 slides)
+            const slideIndex = Math.floor(clampedProgress * (slides.length - 0.01));
+            const finalIndex = Math.min(slideIndex, slides.length - 1);
+
+            // Update active slide
+            slides.forEach((slide, index) => {
+                if (index === finalIndex) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(updateSlide);
+                ticking = true;
+            }
+        });
+
+        // Initial update
+        updateSlide();
+    }
 });

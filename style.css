@@ -79,7 +79,6 @@ header h1 {
     aspect-ratio: 16 / 9;
     background: #ffffff;
     overflow: hidden;
-    cursor: pointer;
 }
 
 .showcase-image {
@@ -195,27 +194,6 @@ footer p {
         padding: 40px 20px;
     }
 
-}
-
-/* Fullscreen image zoom */
-.image-container.zoomed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1000;
-    background: #fff;
-    cursor: zoom-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.image-container.zoomed .showcase-image {
-    object-fit: contain;
-    max-width: 90vw;
-    max-height: 90vh;
 }
 
 /* Smooth Scrolling */

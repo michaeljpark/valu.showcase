@@ -87,11 +87,6 @@ header h1 {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.4s ease-out;
-}
-
-.image-container:hover .showcase-image {
-    transform: scale(1.1);
 }
 
 .sub-heading {
@@ -200,21 +195,27 @@ footer p {
         padding: 40px 20px;
     }
 
-    .image-container.zoomed {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: 1000;
-        background: #000;
-        cursor: zoom-out;
-    }
+}
 
-    .image-container.zoomed .showcase-image {
-        transform: scale(1);
-        object-fit: contain;
-    }
+/* Fullscreen image zoom */
+.image-container.zoomed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background: #fff;
+    cursor: zoom-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container.zoomed .showcase-image {
+    object-fit: contain;
+    max-width: 90vw;
+    max-height: 90vh;
 }
 
 /* Smooth Scrolling */

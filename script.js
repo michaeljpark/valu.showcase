@@ -103,14 +103,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Mobile image zoom toggle
-    if (window.innerWidth <= 768) {
-        const imageContainers = document.querySelectorAll('.image-container');
-        imageContainers.forEach(container => {
-            container.addEventListener('click', function(e) {
-                e.preventDefault();
-                this.classList.toggle('zoomed');
-            });
+    // Image zoom toggle (fullscreen on click)
+    const imageContainers = document.querySelectorAll('.image-container');
+    imageContainers.forEach(container => {
+        container.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.classList.toggle('zoomed');
         });
-    }
+    });
 });

@@ -134,11 +134,13 @@ header h1 {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transform: scale(0.95);
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
 }
 
 .scroll-slide.active {
     opacity: 1;
+    transform: scale(1);
 }
 
 .showcase-continued {
@@ -195,7 +197,7 @@ footer p {
 
     .showcase {
         gap: 60px;
-        padding: 0 20px 60px;
+        padding: 0 20px 20px;
     }
 
     .showcase-row {

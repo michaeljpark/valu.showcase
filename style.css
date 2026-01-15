@@ -364,10 +364,7 @@ html {
 
 @media (max-width: 1200px) {
     #side-indicator {
-        display: flex;
-        width: auto;
-        left: 15px;
-        justify-content: flex-start;
+        display: none;
     }
 }
 

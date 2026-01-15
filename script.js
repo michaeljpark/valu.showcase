@@ -141,4 +141,89 @@ document.addEventListener('DOMContentLoaded', function() {
         // Initial update
         updateSlide();
     }
+
+    // Side Indicator / Navigation Logic
+    const navItems = document.querySelectorAll('#side-indicator li');
+    // Map data-target to elements
+    const sections = Array.from(navItems).map(item => {
+        const targetId = item.getAttribute('data-target');
+        return document.getElementById(targetId);
+    });
+
+    // Click handler
+    navItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-target');
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                // Determine offset based on section (nav height etc)
+                const offset = 100; 
+                const elementPosition = targetSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+
+    // Scroll handler for active state
+    function updateActiveIndicator() {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        
+        // Find the current section
+        let currentId = null;
+        
+        // Check sections status
+        sections.forEach(section => {
+            if (section) {
+                const sectionTop = section.offsetTop - 200; // Trigger point offset
+                const sectionBottom = sectionTop + section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                    currentId = section.getAttribute('id');
+                }
+            }
+        });
+        
+        // If bottom of page, highlight last item
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+            currentId = sections[sections.length - 1].getAttribute('id');
+        } else if (scrollPosition < (sections[0] ? sections[0].offsetTop : 0)) {
+             // If above first section (like header), maybe highlight first? or none.
+             // Usually first section is Research, which is after header.
+             // Let's keep first highlighted if we are effectively inside it or before second.
+             // Actually my logic above handles it if we are past sectionTop.
+        }
+
+        // Apply active class
+        navItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('data-target') === currentId) {
+                item.classList.add('active');
+            }
+        });
+
+        // Fallback: if no currentId found (maybe between gaps?), highlight the last passed section
+        if (!currentId && sections.length > 0) {
+             for (let i = sections.length - 1; i >= 0; i--) {
+                const section = sections[i];
+                if (section && scrollPosition >= section.offsetTop - 200) {
+                    navItems[i].classList.add('active');
+                    break;
+                }
+             }
+        }
+    }
+
+    window.addEventListener('scroll', function() {
+        window.requestAnimationFrame(updateActiveIndicator);
+    });
+    
+    // Initial check
+    setTimeout(updateActiveIndicator, 100);
+
 });

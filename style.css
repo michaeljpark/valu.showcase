@@ -313,3 +313,61 @@ html {
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 1s forwards;
 }
+
+/* Side Indicator / Navigation */
+#side-indicator {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc((100vw - 1600px) / 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#side-indicator ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+#side-indicator li {
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: #aeaeae;
+    margin-bottom: 24px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+#side-indicator li:last-child {
+    margin-bottom: 0;
+}
+
+#side-indicator li.active {
+    color: #000;
+    font-weight: 700;
+}
+
+@media (max-width: 1800px) {
+    #side-indicator {
+        width: 120px;
+        left: 0;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1200px) {
+    #side-indicator {
+        display: flex;
+        width: auto;
+        left: 15px;
+        justify-content: flex-start;
+    }
+}
+

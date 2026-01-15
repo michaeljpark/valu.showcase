@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav id="side-indicator">
+        <ul>
+            <li class="active" data-target="section-research">Research</li>
+            <li data-target="section-design">Design</li>
+            <li data-target="section-prototyping">Prototyping</li>
+            <li data-target="section-design-pilot">Design Pilot</li>
+        </ul>
+    </nav>
     <div class="container">
         <header>
             <h1>valu</h1>
@@ -29,7 +37,7 @@
 
         <main class="showcase">
             <!-- Showcase Item 1 -->
-            <article class="showcase-item">
+            <article class="showcase-item" id="section-research">
                 <div class="image-container">
                     <img src="1.png" alt="Design showcase 1" class="showcase-image">
                 </div>
@@ -82,7 +90,7 @@
             </article>
 
             <!-- Showcase Item 5 -->
-            <article class="showcase-item">
+            <article class="showcase-item" id="section-design">
                 <div class="image-container">
                     <img src="5.png" alt="Design showcase 5" class="showcase-image">
                 </div>
@@ -92,7 +100,7 @@
         </main>
 
         <!-- Scroll-based image slideshow for 6-12 -->
-        <section class="scroll-slideshow">
+        <section class="scroll-slideshow" id="section-prototyping">
             <div class="scroll-slideshow-sticky">
                 <div class="scroll-slideshow-container">
                     <img src="6.png" alt="App screenshot 6" class="scroll-slide active" data-index="0">
@@ -109,7 +117,7 @@
         <main class="showcase showcase-continued">
         </main>
 
-        <section class="iframe-container">
+        <section class="iframe-container" id="section-design-pilot">
             <iframe
                 src="https://michaeljpark.github.io/valu/"
                 title="valu showcase"

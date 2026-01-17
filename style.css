@@ -368,3 +368,48 @@ html {
     }
 }
 
+
+/* Split Media Layout */
+.media-split-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    align-items: stretch; /* Ensures both elements have the same height */
+}
+
+.media-split-video {
+    width: 30%; /* Video takes about 30% of the width */
+    aspect-ratio: 3 / 4;
+    object-fit: cover; /* Ensures video fills the area without distortion */
+    border-radius: 30px;
+}
+
+/* Wrapper for the iframe to handle layout and clipping */
+.media-iframe-wrapper {
+    flex: 1; /* Wrapper takes the remaining width */
+    position: relative;
+    border-radius: 30px;
+    border: 1px solid #e0e0e0;
+    overflow: hidden; /* Clips the scaled iframe */
+}
+
+/* Scaled Iframe */
+.media-iframe-wrapper iframe {
+    width: 142.86%; /* 100% / 0.7 */
+    height: 142.86%; /* 100% / 0.7 */
+    transform: scale(0.7);
+    transform-origin: 0 0;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    .media-iframe-wrapper iframe {
+        width: 100%;
+        height: 100%;
+        transform: scale(1);
+    }
+}
+
